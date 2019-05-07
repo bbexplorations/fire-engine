@@ -7,11 +7,84 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
     <style amp-custom>
-      {% include "./css/main.css" %}
+      :root {
+        --space-1: .5rem;  /* 8px */
+        --space-2: 1rem;   /* 16px */
+      }
+  
+      body {
+        font-family: 'Google Sans', 'Open Sans', sans-serif;
+        line-height: 2;
+      }
+
+      .tlc-title {
+        font-size: 24px;
+        color: #5F6368;
+        text-align: center;
+        padding-top: 8px;
+      }
+
+      .tlc-tile p {
+        margin: 0;
+      }
+
+      .carousel .slide > amp-img > img {
+        object-fit: contain;
+      }
+
+      .carousel .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: var(--space-1);
+        background: rgba(0, 0, 0, 0.7);
+        font-size: 20px;
+        color: white;
+        max-height: 30%;
+      }
     </style>
   </head>
   <body>
-    <h1>Fire Engine Explorations</h1>
+    <div class="tlc-title">Trending</div>
+      <amp-carousel class="carousel" width="530" height="300" layout="responsive" type="slides">
+        <div>
+          <amp-youtube
+            data-videoid="9ZM_2-TnKvE"
+            layout="fill"
+            width="530" height="300"></amp-youtube>
+        </div>
+
+        <div class="slide">
+          <amp-instagram
+              data-shortcode="BxI_KEbgdgi"
+              width="530"
+              height="300"
+              layout="fill">
+          </amp-instagram>
+        </div>
+      </amp-carousel>
+
+    <div class="tlc-title">Around you</div>
+
+    <div class="tlc-title">Did you know?</div>
+
+    <div class="tlc-title">Be amazed</div>
+
+    <div class="tlc-title">Gaming</div>
+      <amp-carousel class="carousel" width="530" height="300" layout="responsive" type="slides">
+        <div class="slide">
+          <amp-img src="images/fortnite.png" alt="Welcome" height="300" width="530" layout="fill"></amp-img>
+          <div class="caption">
+            Fortnite season 9 announced
+          </div>
+        </div>
+      </amp-carousel>
+
+    <div class="tlc-title">Sports</div>
   </body>
 </html>
